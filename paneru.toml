@@ -1,0 +1,106 @@
+# Paneru 0.4.4 configuration derived from:
+# https://github.com/KapJ1coH/niri/blob/master/config.kdl
+
+[options]
+focus_follows_mouse = false
+mouse_follows_focus = false
+preset_column_widths = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+animation_speed = 15.0
+auto_center = false
+window_resize_cycle = true
+reap_empty_workspaces = true
+disable_native_tabs = true
+horizontal_mouse_warp = -1
+
+[padding]
+top = 4
+bottom = 4
+left = 4
+right = 4
+
+[swipe]
+continuous = false
+
+[swipe.scroll]
+modifier = "cmd + ctrl"
+vertical_modifier = "shift"
+
+[bindings]
+# Focus columns/windows. These are the only plain Command bindings.
+window_focus_west = "cmd - leftarrow"
+window_focus_east = "cmd - rightarrow"
+window_focus_north = "cmd - uparrow"
+window_focus_south = "cmd - downarrow"
+
+# Swap columns/windows while preserving macOS Command+Shift text selection.
+window_swap_west = "cmd + ctrl + shift - leftarrow"
+window_swap_east = "cmd + ctrl + shift - rightarrow"
+window_swap_north = "cmd + ctrl + shift - uparrow"
+window_swap_south = "cmd + ctrl + shift - downarrow"
+
+# Strip boundaries.
+window_focus_first = "cmd + ctrl - home"
+window_focus_last = "cmd + ctrl - end"
+window_swap_first = "cmd + ctrl + shift - home"
+window_swap_last = "cmd + ctrl + shift - end"
+
+# Virtual workspace navigation. U means down and I means up, matching niri.
+window_virtual_north = ["cmd + ctrl - pageup", "cmd + ctrl - i"]
+window_virtual_south = ["cmd + ctrl - pagedown", "cmd + ctrl - u"]
+window_virtualmove_north = ["cmd + ctrl + shift - pageup", "cmd + ctrl + shift - i"]
+window_virtualmove_south = ["cmd + ctrl + shift - pagedown", "cmd + ctrl + shift - u"]
+
+# Direct virtual workspace navigation.
+window_virtualnum_1 = "cmd + ctrl - 1"
+window_virtualnum_2 = "cmd + ctrl - 2"
+window_virtualnum_3 = "cmd + ctrl - 3"
+window_virtualnum_4 = "cmd + ctrl - 4"
+window_virtualnum_5 = "cmd + ctrl - 5"
+window_virtualnum_6 = "cmd + ctrl - 6"
+window_virtualnum_7 = "cmd + ctrl - 7"
+window_virtualnum_8 = "cmd + ctrl - 8"
+window_virtualnum_9 = "cmd + ctrl - 9"
+
+window_virtualmovenum_1 = "cmd + ctrl + shift - 1"
+window_virtualmovenum_2 = "cmd + ctrl + shift - 2"
+window_virtualmovenum_3 = "cmd + ctrl + shift - 3"
+window_virtualmovenum_4 = "cmd + ctrl + shift - 4"
+window_virtualmovenum_5 = "cmd + ctrl + shift - 5"
+window_virtualmovenum_6 = "cmd + ctrl + shift - 6"
+window_virtualmovenum_7 = "cmd + ctrl + shift - 7"
+window_virtualmovenum_8 = "cmd + ctrl + shift - 8"
+window_virtualmovenum_9 = "cmd + ctrl + shift - 9"
+
+# Column structure and sizing.
+window_stack = "cmd + ctrl - leftbracket"
+window_unstack = "cmd + ctrl - rightbracket"
+window_resize = "cmd + ctrl - r"
+window_shrink = "cmd + ctrl - minus"
+window_grow = "cmd + ctrl - equal"
+window_equalize = "cmd + ctrl + shift - r"
+window_fullwidth = "cmd + ctrl + shift - f"
+window_center = "cmd + ctrl - c"
+
+# Tiled/floating focus and management.
+window_manage = "cmd + ctrl + shift - t"
+window_focus_managed = "cmd + ctrl - v"
+window_focus_unmanaged = "cmd + ctrl + shift - v"
+
+# Display movement. Paneru cycles displays rather than moving directionally.
+window_nextdisplay = "cmd + ctrl - m"
+window_nextdisplaysend = "cmd + ctrl + shift - m"
+
+quit = "cmd + ctrl + shift - e"
+
+# Apply niri's 1/2-screen default width and produce 8 px gaps:
+# 4 px per window on each side plus 4 px around the screen edges.
+[windows.all]
+title = ".*"
+width = 0.5
+horizontal_padding = 4
+vertical_padding = 4
+
+[restore]
+enabled = true
+startup_grace_ms = 2000
+missing_windows = "ignore"
